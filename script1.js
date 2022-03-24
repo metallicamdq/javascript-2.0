@@ -5,8 +5,22 @@ const templateCard = document.getElementById('template-card').content
 const templateFooter = document.getElementById('template-footer').content
 const templateCarrito = document.getElementById('template-carrito').content
 const fragment = document.createDocumentFragment()
+const vermas = document.querySelector('.vermas')
 let carrito = {}
 
+function saludar() {
+    Toastify({
+        text: `se ha añadido al carrito ${cards.title}`,
+        duration: 3000
+    }).showToast();
+}
+
+function despedir() {
+    Toastify({
+        text: `se ha vaciado el carrito`,
+        duration: 3000
+    }).showToast();
+}
 // Eventos
 // El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado
 document.addEventListener('DOMContentLoaded', e => {
@@ -14,6 +28,8 @@ document.addEventListener('DOMContentLoaded', e => {
 });
 cards.addEventListener('click', e => {
     addCarrito(e)
+    //saludar()
+
 });
 items.addEventListener('click', e => {
     btnAumentarDisminuir(e)
@@ -123,6 +139,7 @@ const pintarFooter = () => {
     boton.addEventListener('click', () => {
         carrito = {}
         pintarCarrito()
+        despedir()
     })
 
 }
