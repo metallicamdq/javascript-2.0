@@ -169,3 +169,13 @@ const btnAumentarDisminuir = e => {
     }
     e.stopPropagation()
 }
+
+
+//modo oscuro
+const darkmode = document.querySelector(".dark-mode")
+    darkmode.addEventListener('click', () => {
+    document.body.classList.toggle("dark");
+    document.body.classList.contains('dark') ? localStorage.setItem('darkMode', 'true') : localStorage.setItem('darkMode', 'false');
+});
+//modo blanco
+localStorage.getItem("darkMode") === "true" ? document.body.classList.add("dark") : document.body.classList.remove("dark");

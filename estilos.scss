@@ -1,0 +1,16 @@
+.precio::before{
+    content: "$";
+}
+body{
+    &.dark{
+        background-color: #222;
+        color: white;
+    }
+    #cards{
+        body.dark &{
+            color: white;
+            background-color: black;
+            
+        }
+    }
+}
