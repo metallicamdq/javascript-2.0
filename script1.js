@@ -64,14 +64,12 @@ const addCarrito = e => {
 }
 
 const setCarrito = item => {
-    // console.log(item)
     const producto = {
         title: item.querySelector('h5').textContent,
         precio: item.querySelector('p').textContent,
         id: item.querySelector('button').dataset.id,
         cantidad: 1
     }
-    // console.log(producto)
     if (carrito.hasOwnProperty(producto.id)) {
         producto.cantidad = carrito[producto.id].cantidad + 1
     }
@@ -113,8 +111,6 @@ const pintarFooter = () => {
         `
         return
     }
-
-    // sumar cantidad y sumar totales
     const nCantidad = Object.values(carrito).reduce((acc, {
         cantidad
     }) => acc + cantidad, 0)
@@ -122,7 +118,6 @@ const pintarFooter = () => {
         cantidad,
         precio
     }) => acc + cantidad * precio, 0)
-    // console.log(nPrecio)
 
     templateFooter.querySelectorAll('td')[0].textContent = nCantidad
     templateFooter.querySelector('span').textContent = nPrecio
@@ -142,7 +137,6 @@ const pintarFooter = () => {
 }
 
 const btnAumentarDisminuir = e => {
-    // console.log(e.target.classList.contains('btn-info'))
     if (e.target.classList.contains('btn-info')) {
         const producto = carrito[e.target.dataset.id]
         producto.cantidad++
@@ -166,7 +160,6 @@ const btnAumentarDisminuir = e => {
     }
     e.stopPropagation()
 }
-
 
 //modo oscuro
 const darkmode = document.querySelector(".dark-mode")
