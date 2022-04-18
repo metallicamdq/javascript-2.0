@@ -1,14 +1,159 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.slider-container {
+  margin-top: 30px;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 0 10px #fff, 0 15px 50px;
+          box-shadow: 0 0 0 10px #fff, 0 15px 50px;
+  position: relative;
+}
+
+.slider-container .slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 400px;
+  width: 400%;
+  margin-left: 0%;
+}
+
+.slider-container .slider .slider-section {
+  width: 100%;
+}
+
+.slider-container .slider .slider-section img {
+  z-index: 100;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.slider-container .slider-btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 30px;
+  font-weight: bold;
+  font-family: monospace;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider-container .slider-btn:hover {
+  background: #fff;
+}
+
+.slider-container .slider-btn-izquierda {
+  left: 10px;
+}
+
+.slider-container .slider-btn-derecha {
+  right: 10px;
+}
+
 .precio::before {
   content: "$";
 }
 
+#body {
+  font-family: 'Oswald', sans-serif;
+}
+
+body {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body nav {
+  margin: 12px;
+}
+
+body .boton-darkmode {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
 body.dark {
-  background-color: #222;
+  background-color: #222222cf;
   color: white;
+}
+
+body.dark th {
+  color: white;
+}
+
+body.dark table {
+  color: white;
+}
+
+body.dark h5 {
+  color: white;
+}
+
+body.dark p {
+  color: white;
+}
+
+body.dark .card {
+  background-color: rgba(0, 0, 0, 0.123);
 }
 
 body.dark body #cards {
   color: white;
   background-color: black;
+}
+
+body .nav-bar {
+  background-color: rgba(45, 162, 217, 0.166);
+  border-radius: 40px 0px 20px 20px;
+}
+
+body input {
+  --hover-shadows: 16px 16px 33px #121212,
+            -16px -16px 33px #303030;
+  --accent: fuchsia;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  border: none;
+  border-radius: 0.5em;
+  background-color: #212121;
+  color: white;
+  padding: 0.3em 1em;
+  -webkit-transition: background-color ease-in-out 0.1s, letter-spacing ease-in-out 0.1s, -webkit-box-shadow ease-in-out 0.3s, -webkit-transform ease-in-out 0.1s;
+  transition: background-color ease-in-out 0.1s, letter-spacing ease-in-out 0.1s, -webkit-box-shadow ease-in-out 0.3s, -webkit-transform ease-in-out 0.1s;
+  transition: box-shadow ease-in-out 0.3s, background-color ease-in-out 0.1s, letter-spacing ease-in-out 0.1s, transform ease-in-out 0.1s;
+  transition: box-shadow ease-in-out 0.3s, background-color ease-in-out 0.1s, letter-spacing ease-in-out 0.1s, transform ease-in-out 0.1s, -webkit-box-shadow ease-in-out 0.3s, -webkit-transform ease-in-out 0.1s;
+  -webkit-box-shadow: 13px 13px 10px #1c1c1c, -13px -13px 10px #262626;
+          box-shadow: 13px 13px 10px #1c1c1c, -13px -13px 10px #262626;
+}
+
+body input:hover {
+  -webkit-box-shadow: var(--hover-shadows);
+          box-shadow: var(--hover-shadows);
+}
+
+body input:active {
+  -webkit-box-shadow: var(--hover-shadows), var(--accent) 0px 0px 30px 5px;
+          box-shadow: var(--hover-shadows), var(--accent) 0px 0px 30px 5px;
+  background-color: var(--accent);
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
 }
 /*# sourceMappingURL=estilos.css.map */

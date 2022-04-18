@@ -22,13 +22,11 @@ function despedir() {
     }).showToast();
 }
 // Eventos
-// El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado
 document.addEventListener('DOMContentLoaded', e => {
     fetchData()
 });
 cards.addEventListener('click', e => {
     addCarrito(e)
-    //saludar()
 
 });
 items.addEventListener('click', e => {
@@ -43,7 +41,6 @@ const fetchData = async () => {
     pintarCards(data)
 }
 
-// Pintar productos
 const pintarCards = data => {
     data.forEach(item => {
         templateCard.querySelector('h5').textContent = item.title

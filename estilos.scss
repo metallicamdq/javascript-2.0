@@ -1,16 +1,93 @@
-.precio::before{
+@import"slider";
+.precio::before {
     content: "$";
 }
-body{
-    &.dark{
-        background-color: #222;
-        color: white;
+
+#body {
+    font-family: 'Oswald', sans-serif;
+
+}
+
+body {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    nav{
+        margin:12px;
     }
-    #cards{
-        body.dark &{
+
+    .boton-darkmode {
+        display: flex;
+        justify-content: end;
+    }
+
+    &.dark {
+        background-color: #222222cf;
+        color: white;
+
+        th {
             color: white;
-            background-color: black;
-            
+        }
+
+        table {
+            color: white;
+        }
+
+        h5 {
+            color: white;
+        }
+
+        p {
+            color: white;
+        }
+
+        .card {
+            background-color: rgba(0, 0, 0, 0.123);
         }
     }
+
+
+    #cards {
+        body.dark & {
+            color: white;
+            background-color: black;
+
+        }
+    }
+
+    .nav-bar {
+        background-color: rgba(45, 162, 217, 0.166);
+        border-radius: 40px 0px 20px 20px;
+    }
+
+    input {
+        --hover-shadows: 16px 16px 33px #121212,
+            -16px -16px 33px #303030;
+        --accent: fuchsia;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        border: none;
+        border-radius: 0.5em;
+        background-color: #212121;
+        color: white;
+        padding: 0.3em 1em;
+        transition: box-shadow ease-in-out 0.3s,
+            background-color ease-in-out 0.1s,
+            letter-spacing ease-in-out 0.1s,
+            transform ease-in-out 0.1s;
+        box-shadow: 13px 13px 10px #1c1c1c,
+            -13px -13px 10px #262626;
+    }
+
+    input:hover {
+        box-shadow: var(--hover-shadows);
+    }
+
+    input:active {
+        box-shadow: var(--hover-shadows),
+            var(--accent) 0px 0px 30px 5px;
+        background-color: var(--accent);
+        transform: scale(0.95);
+    }
+
 }
